@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controller.VeterinariosController"
+      stylesheets="@/styles/veterinario.css"
+      styleClass="root">
+    <TitledPane text="Registrar Veterinario" collapsible="false" styleClass="panel-titledpane">
+        <VBox spacing="10">
+            <HBox spacing="10">
+                <TextField fx:id="txtNombreCompleto" promptText="Nombre completo"/>
+                <TextField fx:id="txtDocumento" promptText="Documento de identidad"/>
+            </HBox>
+            <HBox spacing="10">
+                <TextField fx:id="txtTelefono" promptText="Teléfono"/>
+                <TextField fx:id="txtEmail" promptText="Email"/>
+            </HBox>
+            <HBox spacing="10">
+                <TextField fx:id="txtEspecialidad" promptText="Especialidad"/>
+                <Button text="Agregar" onAction="#agregarVeterinario" styleClass="btn-guardar"/>
+                <Button text="Limpiar" onAction="#limpiarFormulario" styleClass="btn-cancelar"/>
+            </HBox>
+        </VBox>
+    </TitledPane>
+
+    <TableView fx:id="tablaVeterinarios" VBox.vgrow="ALWAYS" styleClass="tabla">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+            <TableColumn fx:id="colDocumento" text="Documento" prefWidth="120"/>
+            <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="100"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+            <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="120"/>
+            <TableColumn fx:id="colEstado" text="Estado" prefWidth="80"/>
+        </columns>
+    </TableView>
+</VBox>

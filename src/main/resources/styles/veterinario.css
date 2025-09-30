@@ -1,0 +1,25 @@
+.root {
+    -fx-padding: 15;
+    -fx-background-color: #f5f5f5;
+}
+
+.panel-titledpane {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-width: 100%;
+}
+
+.tabla {
+    -fx-pref-height: 400px;
+    -fx-pref-width: 100%;
+}
+
+.btn-guardar {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+}
+
+.btn-cancelar {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}

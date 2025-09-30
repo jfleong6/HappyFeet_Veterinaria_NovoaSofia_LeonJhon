@@ -1,0 +1,90 @@
+/* =========================
+   Estilos de Formulario
+   ========================= */
+.form-grid {
+    -fx-padding: 20;
+    -fx-background-color: #fdfdfd;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.form-input {
+    -fx-pref-width: 200;
+}
+
+.form-textarea {
+    -fx-pref-row-count: 3;
+    -fx-pref-column-count: 50;
+}
+
+.form-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12;
+    -fx-background-radius: 6;
+}
+.form-button:hover {
+    -fx-background-color: #45a049;
+}
+
+
+/* =========================
+   Estilos de Calendario
+   ========================= */
+
+/* Cabecera de días */
+.dia-header {
+    -fx-font-weight: bold;
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-text-alignment: center;
+}
+
+/* Día actual */
+.dia-actual {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+/* Cabecera de horas */
+.hora-header {
+    -fx-font-weight: bold;
+    -fx-background-color: #f0f0f0;
+    -fx-padding: 5px;
+}
+
+/* Celdas vacías */
+.celda-calendario {
+    -fx-border-color: #ccc;
+    -fx-background-color: #fafafa;
+}
+.celda-calendario-par {
+    -fx-border-color: #ccc;
+    -fx-background-color: #f2f2f2;
+}
+
+/* Citas */
+.cita {
+    -fx-background-color: #17a2b8;
+    -fx-text-fill: white;
+    -fx-padding: 5px;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-alignment: center;
+}
+.cita:hover {
+    -fx-background-color: #138496;
+    -fx-cursor: hand;
+}
+.label-mascota{
+    -fx-font-size: 15;
+    -fx-text-fill: #ffffff;
+
+}

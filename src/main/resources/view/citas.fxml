@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      stylesheets="@/styles/citas.css"
+      fx:controller="org.example.controller.CitasController" spacing="10">
+
+    <!-- Formulario Agregar Cita -->
+    <GridPane hgap="15" vgap="12" styleClass="form-grid">
+        <!-- Paciente -->
+        <Label text="Paciente:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
+        <ComboBox fx:id="cbPaciente" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="form-input"/>
+
+        <!-- Veterinario -->
+        <Label text="Veterinario:" GridPane.columnIndex="2" GridPane.rowIndex="0" styleClass="form-label"/>
+        <ComboBox fx:id="cbVeterinario" GridPane.columnIndex="3" GridPane.rowIndex="0" styleClass="form-input"/>
+
+        <!-- Fecha -->
+        <Label text="Fecha:" GridPane.columnIndex="4" GridPane.rowIndex="0" styleClass="form-label"/>
+        <DatePicker fx:id="dpFecha" GridPane.columnIndex="5" GridPane.rowIndex="0" styleClass="form-input"/>
+
+        <!-- Hora -->
+        <Label text="Hora:" GridPane.columnIndex="6" GridPane.rowIndex="0" styleClass="form-label"/>
+        <ComboBox fx:id="tfHora" GridPane.columnIndex="7" GridPane.rowIndex="0" styleClass="form-input"/>
+
+        <!-- Motivo -->
+        <Label text="Motivo:" GridPane.columnIndex="0" GridPane.rowIndex="1" styleClass="form-label" />
+        <TextArea fx:id="taMotivo" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan="7" styleClass="form-textarea"/>
+
+        <!-- Estado -->
+        <Label text="Estado:" GridPane.columnIndex="0" GridPane.rowIndex="2" styleClass="form-label"/>
+        <ComboBox fx:id="cbEstado" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="form-input"/>
+
+        <!-- Botón -->
+        <Button fx:id="btnAgregarCita" text="➕ Agregar Cita"
+                GridPane.columnIndex="2" GridPane.rowIndex="2"
+                styleClass="form-button"/>
+    </GridPane>
+
+
+    <!-- Controles Semana -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnSemanaAnterior" text="Semana Anterior"/>
+        <Label fx:id="labelSemanaActual" HBox.hgrow="ALWAYS" textAlignment="CENTER"/>
+        <Button fx:id="btnSemanaSiguiente" text="Semana Siguiente"/>
+    </HBox>
+
+
+
+    <!-- Calendario Semanal -->
+    <GridPane fx:id="calendarioGrid" hgap="5" vgap="5" HBox.hgrow="ALWAYS">
+        <!-- Las citas se agregarán dinámicamente desde el Controller -->
+        <!-- Cada columna representa un día de la semana -->
+    </GridPane>
+
+</VBox>
