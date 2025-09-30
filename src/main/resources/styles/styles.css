@@ -1,0 +1,73 @@
+/* Menú lateral colapsado */
+.side-menu {
+    -fx-background-color: #2C3E50;
+    -fx-pref-width: 10;       /* ancho solo para iconos */
+    -fx-padding: 5;
+    -fx-alignment: TOP_CENTER;
+    -fx-transition: -fx-pref-width 0.5s ease;   /* transición suave */
+}
+
+/* Expandir al pasar el mouse */
+.side-menu:hover {
+    -fx-pref-width: 200;      /* ancho expandido */
+    -fx-alignment: TOP_LEFT;
+}
+
+/* Botones del menú */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;    /* texto invisible por defecto */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+}
+
+/* Mostrar texto cuando se expanda el menú */
+.side-menu:hover .menu-button {
+    -fx-text-fill: white;          /* texto visible */
+}
+
+/* Hover de los botones */
+.menu-button:hover {
+    -fx-background-color: #34495E;
+}
+
+/* Botón salir destacado */
+.exit-button {
+    -fx-font-size: 18px;
+
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+    -fx-background-radius: 18;
+}
+
+.content-area{
+    -fx-padding:5 5;
+}
+
+.side-menu:hover .exit-button {
+    -fx-text-fill: white;
+}
+
+.exit-button:hover {
+    -fx-background-color: #f37366;
+}
+
+/* Labels de usuario/documento (al fondo) */
+.user-info {
+    -fx-text-fill: transparent;
+    -fx-font-size: 12px;
+    -fx-font-style: italic;
+    -fx-alignment: CENTER_LEFT;
+
+}
+
+.side-menu:hover .user-info {
+    -fx-text-fill: #ECF0F1;
+}

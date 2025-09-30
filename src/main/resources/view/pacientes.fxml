@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.controller.PacientesController"
+      spacing="15" alignment="TOP_LEFT"
+      prefWidth="900" prefHeight="650"
+      stylesheets="@/styles/pacientes.css">
+
+    <!-- TÍTULO -->
+    <Label text="GESTIÓN DE MASCOTAS" styleClass="titulo-principal"/>
+
+
+    <!-- FORMULARIO DE INGRESO -->
+    <TitledPane text="Registrar Paciente" >
+        <VBox spacing="10" >
+            <HBox spacing="10">
+                <TextField fx:id="txtNombre" promptText="Nombre"/>
+                <ComboBox fx:id="cbEspecie" promptText="Especie" prefWidth="160"/>
+                <ComboBox fx:id="cbRaza" promptText="Raza" prefWidth="160"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <DatePicker fx:id="dpfetchNacimiento" promptText="Fecha nacimiento"/>
+                <ComboBox fx:id="cbSexo" promptText="Sexo" prefWidth="140"/>
+                <TextField fx:id="txtPeso" promptText="Peso (kg)" prefWidth="100"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <TextField fx:id="txtAlergias" promptText="Alergias" prefWidth="200"/>
+                <TextField fx:id="txtCondiciones" promptText="Condiciones preexistentes" prefWidth="250"/>
+                <TextField fx:id="txtMicrochip" promptText="Microchip"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <ComboBox fx:id="cbPropietario" promptText="Propietario" prefWidth="200"/>
+                <Button text="Agregar" onAction="#agregarPaciente" styleClass="btn-guardar"/>
+                <Button text="Limpiar" onAction="#limpiarFormulario" styleClass="btn-cancelar"/>
+            </HBox>
+        </VBox>
+    </TitledPane>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Buscar por dueño:"/>
+        <TextField fx:id="txtBuscarPropietario" promptText="Ingrese nombre del dueño" prefWidth="200"/>
+        <Button text="Buscar" onAction="#buscarPorPropietario"/>
+        <Button text="Limpiar" onAction="#limpiarFiltro"/>
+    </HBox>
+
+    <!-- TABLA DE PACIENTES -->
+    <TableView fx:id="tablaPacientes" prefHeight="400" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="id" prefWidth="50"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="300"/>
+            <TableColumn fx:id="colEspecie" text="Especie" prefWidth="120"/>
+            <TableColumn fx:id="colRaza" text="Raza" prefWidth="120"/>
+            <TableColumn fx:id="colNacimiento" text="Nacimiento" prefWidth="120"/>
+            <TableColumn fx:id="colEdad" text="Edad" prefWidth="80"/>
+            <TableColumn fx:id="colSexo" text="Sexo" prefWidth="80"/>
+            <TableColumn fx:id="colPeso" text="Peso (kg)" prefWidth="80"/>
+            <TableColumn fx:id="colDueno" text="Propietario" prefWidth="150"/>
+            <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="180"/>
+        </columns>
+    </TableView>
+
+</VBox>

@@ -1,0 +1,39 @@
+/* Panel general */
+.panel-titledpane {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #c0c0c0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.5, 0, 0);
+}
+
+/* Botones */
+.btn-guardar {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+.btn-cancelar {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+}
+
+/* Tabla */
+.table-view {
+    -fx-border-color: #c0c0c0;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+}
+.btn-ver {
+    -fx-background-color: #4CAF50; /* verde */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 5 10;
+    -fx-cursor: hand;
+}

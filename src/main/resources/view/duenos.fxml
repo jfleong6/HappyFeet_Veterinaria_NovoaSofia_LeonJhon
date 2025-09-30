@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.controller.DuenosController"
+            stylesheets="@/styles/duenos.css"
+            prefWidth="900" prefHeight="600">
+
+    <VBox spacing="20" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+
+        <!-- PANEL DE REGISTRO -->
+        <TitledPane text="Registrar Dueño" styleClass="panel-titledpane" expanded="true"
+                    maxWidth="Infinity">
+            <VBox spacing="10">
+
+                <HBox spacing="10">
+                    <TextField fx:id="txtNombre" promptText="Nombre completo" prefWidth="440"/>
+                    <TextField fx:id="txtDocumento" promptText="Documento identidad" prefWidth="180"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <TextField fx:id="txtDireccion" promptText="Dirección" prefWidth="250"/>
+                    <TextField fx:id="txtTelefono" promptText="Teléfono" prefWidth="180"/>
+                    <TextField fx:id="txtEmail" promptText="Email" prefWidth="180"/>
+                </HBox>
+
+                <HBox spacing="10">
+                    <TextField fx:id="txtContactoEmergencia" promptText="Contacto emergencia" prefWidth="250"/>
+                    <Button text="Agregar" onAction="#agregarDueno" styleClass="btn-guardar"/>
+                    <Button text="Limpiar" onAction="#limpiarFormulario" styleClass="btn-cancelar"/>
+                </HBox>
+
+            </VBox>
+        </TitledPane>
+
+        <!-- TABLA DE DUEÑOS -->
+        <TableView fx:id="tablaDuenos" VBox.vgrow="ALWAYS" AnchorPane.topAnchor="0"
+                   AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+                <TableColumn fx:id="colDocumento" text="Documento" prefWidth="150"/>
+                <TableColumn fx:id="colDireccion" text="Dirección" prefWidth="200"/>
+                <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="100"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+                <TableColumn fx:id="colMascotas" text="Cantidad Mascotas" prefWidth="150"/>
+                <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="150"/>
+            </columns>
+        </TableView>
+
+    </VBox>
+</AnchorPane>

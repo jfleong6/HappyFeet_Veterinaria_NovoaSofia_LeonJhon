@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.controller.MenuPrincipalController" stylesheets="@/styles/styles.css">
+    <!-- Menú lateral -->
+    <left>
+        <BorderPane fx:id="menuContainer" styleClass="side-menu" >
+            <!-- Menú arriba -->
+            <top>
+                <VBox spacing="10" fx:id="sideMenu">
+                    <!-- Botón Pacientes -->
+                    <Button fx:id="btnPacientes" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/pacientes.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Pacientes</text>
+                    </Button>
+
+                    <!-- Botón Dueños -->
+                    <Button fx:id="btnDuenos" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/cliente.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Dueños</text>
+                    </Button>
+
+                    <!-- Botón Veterinarios -->
+                    <Button fx:id="btnVeterinario" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/veterinario.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Veterinarios</text>
+                    </Button>
+
+                    <!-- Botón Citas -->
+                    <Button fx:id="btnCitas" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/citas.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Citas</text>
+                    </Button>
+
+                    <!-- Botón Inventario -->
+                    <Button fx:id="btnInventario" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/inventario.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Inventario</text>
+                    </Button>
+
+                    <!-- Botón Reporte -->
+                    <Button fx:id="btnFacturacionReportes" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/factura.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Reporte</text>
+                    </Button>
+
+                    <!-- Botón Reporte -->
+                    <Button fx:id="btnEspeciales" maxWidth="Infinity" styleClass="menu-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image>
+                                    <Image url="@/icons/especiales.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <text>Especiales</text>
+                    </Button>
+                </VBox>
+            </top>
+            <!-- Usuario + Documento + Botón Salir abajo -->
+            <bottom>
+                <VBox spacing="5" alignment="CENTER">
+                    <Label fx:id="lblUsuario" text="Usuario: Juan Pérez" styleClass="user-info"/>
+                    <Label fx:id="lblDocumento" text="Documento: 123456789" styleClass="user-info"/>
+                    <Button fx:id="btnSalir" text="Salir" maxWidth="Infinity" styleClass="exit-button">
+                        <graphic>
+                            <ImageView fitWidth="32" fitHeight="32" preserveRatio="true">
+                                <image> <Image url="@/icons/salir.png"/> </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </VBox>
+            </bottom>
+        </BorderPane>
+    </left>
+    <!-- Contenedor central (donde cargaremos pantallas) -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area"/>
+    </center>
+</BorderPane>
