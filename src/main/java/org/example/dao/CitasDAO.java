@@ -61,11 +61,12 @@ public class CitasDAO {
     }
 
 
-    public List<Cita> getCitasPorSemana(LocalDate inicioSemana) throws Exception {
+    public List<Cita> getCitasPorSemana(LocalDate inicioSemana, Integer CidVeterinario) throws Exception {
         List<Cita> citas = new ArrayList<>();
 
         // Calcular la fecha final de la semana (7 días después)
         LocalDate finSemana = inicioSemana.plusDays(6);
+        Integer idVete = CidVeterinario;
 
         // Formatear las fechas a java.sql.Date
         Date fechaInicio = Date.valueOf(inicioSemana);
@@ -76,7 +77,7 @@ public class CitasDAO {
                 "INNER JOIN veterinarios v ON c.id_veterinario = v.id_veterinario";
 
         // Condición para filtrar por semana
-        String condicion = "c.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "'";
+        String condicion = "c.fecha BETWEEN '" + fechaInicio + "' AND '" + fechaFin + "' AND c.id_veterinario = '"+idVete+"'";
 
         List<Map<String, Object>> results = ReadUtil.select(
                 "citas c",
@@ -103,6 +104,9 @@ public class CitasDAO {
 
             Cita cita = new Cita(id, fecha, hora, motivo, estado, idPaciente, idVeterinario, nombrePaciente, nombreVet);
             citas.add(cita);
+        }
+        for (Cita c : citas) {
+            System.out.println(c);
         }
 
         return citas;

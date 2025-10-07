@@ -98,6 +98,8 @@ public class CitasController {
             for (Map<String, Object> fila : filas) {
                 cbVeterinario.getItems().add(new ItemCombo((int) fila.get("id_veterinario"), fila.get("nombre_completo").toString()));
             }
+            cbVeterinario.getSelectionModel().selectFirst();
+            cbVeterinario.setOnAction(e->{cargarCitasSemana();});
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -184,7 +186,7 @@ public class CitasController {
             Label lblHora = new Label((7 + row) + ":00");
             lblHora.getStyleClass().add("hora-header");
             lblHora.setMaxWidth(Double.MAX_VALUE);
-            lblHora.setMaxHeight(Double.MAX_VALUE);
+            lblHora.setMaxHeight(50);
             GridPane.setHgrow(lblHora, Priority.ALWAYS);
             GridPane.setVgrow(lblHora, Priority.ALWAYS);
             calendarioGrid.add(lblHora, 0, row);
@@ -198,7 +200,7 @@ public class CitasController {
                 else pane.getStyleClass().add("celda-calendario");
 
                 pane.setMaxWidth(Double.MAX_VALUE);
-                pane.setMaxHeight(Double.MAX_VALUE);
+                pane.setMaxHeight(50);
                 GridPane.setHgrow(pane, Priority.ALWAYS);
                 GridPane.setVgrow(pane, Priority.ALWAYS);
 
@@ -207,7 +209,7 @@ public class CitasController {
                 container.setFillWidth(true);
                 container.setPadding(new Insets(4));
                 container.setMaxWidth(Double.MAX_VALUE);
-                container.setMaxHeight(Double.MAX_VALUE);
+                container.setMaxHeight(50);
                 StackPane.setAlignment(container, Pos.TOP_LEFT);
                 pane.getChildren().add(container);
 
@@ -233,7 +235,9 @@ public class CitasController {
 
         // Cargar citas de la semana y colocarlas dentro del VBox de la celda correspondiente
         try {
-            List<Cita> citas = citasDAO.getCitasPorSemana(inicioSemana);
+            ItemCombo itemVet = cbVeterinario.getValue();
+            System.out.println(itemVet.getId());
+            List<Cita> citas = citasDAO.getCitasPorSemana(inicioSemana,itemVet.getId());
 
             for (Cita cita : citas) {
                 int dia = cita.getFecha().toLocalDate().getDayOfWeek().getValue(); // 1=Lunes ... 7=Domingo
@@ -244,13 +248,13 @@ public class CitasController {
                 // Construir la "tarjeta" de la cita
                 Label lblPaciente = new Label("🐾 "+cita.getPacienteNombre());
                 lblPaciente.getStyleClass().add("label-mascota");
-                Label lblHora = new Label("🕔 "+cita.getHora().toString());
-                Label lblVet = new Label("🩺 "+ cita.getVeterinarioNombre());
-                lblPaciente.getStyleClass().add("cita-text-line");
-                lblHora.getStyleClass().add("cita-text-line-small");
-                lblVet.getStyleClass().add("cita-text-line-small");
+                //Label lblHora = new Label("🕔 "+cita.getHora().toString());
+                //Label lblVet = new Label("🩺 "+ cita.getVeterinarioNombre());
+                //lblVet.getStyleClass().add("cita-text-line-small");
+                //lblPaciente.getStyleClass().add("cita-text-line");
+                //lblHora.getStyleClass().add("cita-text-line-small");
 
-                VBox citaBox = new VBox(2, lblPaciente, lblHora, lblVet);
+                VBox citaBox = new VBox(2, lblPaciente);//, lblHora, lblVet);
                 citaBox.getStyleClass().add("cita"); // usa tu clase .cita del CSS
                 citaBox.setMaxWidth(Double.MAX_VALUE);
                 citaBox.setPadding(new Insets(6));

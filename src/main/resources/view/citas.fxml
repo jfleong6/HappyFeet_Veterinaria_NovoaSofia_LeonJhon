@@ -6,6 +6,9 @@
       fx:controller="org.example.controller.CitasController" spacing="10">
 
     <!-- Formulario Agregar Cita -->
+    <TitledPane text="Registro de citas">
+
+
     <GridPane hgap="15" vgap="12" styleClass="form-grid">
         <!-- Paciente -->
         <Label text="Paciente:" GridPane.columnIndex="0" GridPane.rowIndex="0" styleClass="form-label"/>
@@ -36,7 +39,7 @@
                 GridPane.columnIndex="2" GridPane.rowIndex="2"
                 styleClass="form-button"/>
     </GridPane>
-
+    </TitledPane>
 
     <!-- Controles Semana -->
     <HBox spacing="10" alignment="CENTER">
@@ -46,11 +49,15 @@
     </HBox>
 
 
+    <ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+                fitToWidth="true" fitToHeight="true" pannable="true">
+        <GridPane fx:id="calendarioGrid" hgap="5" vgap="5" HBox.hgrow="ALWAYS">
+            <!-- Las citas se agregarán dinámicamente desde el Controller -->
+            <!-- Cada columna representa un día de la semana -->
+        </GridPane>
 
+    </ScrollPane>
     <!-- Calendario Semanal -->
-    <GridPane fx:id="calendarioGrid" hgap="5" vgap="5" HBox.hgrow="ALWAYS">
-        <!-- Las citas se agregarán dinámicamente desde el Controller -->
-        <!-- Cada columna representa un día de la semana -->
-    </GridPane>
+
 
 </VBox>
